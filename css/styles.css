@@ -1,0 +1,450 @@
+:root{
+    --lightblue: #779ecb;
+    --white: #ffffff;
+    --black: #000000;
+    --lightOrange: #ffa366;
+    --darkGray: #121212;
+    --lightGray: #332940;
+}
+/*----GENERAL------*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: helvetica, sans-serif;
+    min-height: 100vh;
+    line-height: 1.5;
+    background: var(--white);
+    color: var(--black);
+    transition: ease-in, 0.7s;
+    
+}
+
+header, footer{
+    background-color:  var(--lightblue);
+    color: var(--white);
+    font-weight:bold;
+    transition: ease-in, 0.7s;
+    
+}
+/*----------*/
+
+/*----font size for footer and text alignment for center ------*/
+.font-sm {
+    font-size: 1.5rem;
+}
+
+.right-indent{
+    padding-left: 1em;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/*----Grid design for Header, body and footer, Nav------*/
+header{
+    display: grid;
+    grid-area: header;   
+}
+
+body{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "body body body"
+    "footer footer footer";
+    grid-template-columns: 80pc;
+    grid-template-rows: 5rem 1fr 3rem;
+    grid-area: body
+}
+
+footer{
+    display: grid; 
+    grid-area: footer;
+ }
+
+ h1 {
+    text-align: center;
+    padding-left: 1rem;
+    
+}
+
+nav li {
+    list-style-type:none;
+    text-decoration:none;
+    padding-right: 2rem;
+    font-size: 1.4rem;
+}
+
+
+nav a {
+    list-style-type:none;
+    text-decoration:none;
+    color: var(--white);
+}
+
+nav a:hover, 
+nav a:active{
+    border-bottom: 4px solid var(--lightblue);
+    cursor: pointer;
+    color: black;
+}
+
+header.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----Main Content Adjustment------*/
+main {
+    padding: 1rem;
+    background-color: var(--white);
+    transition: ease-in, 0.7s;
+}
+
+
+h2 {
+    color: var(--lightOrange);
+    margin-bottom: .5rem;
+
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+main li {
+    background-image: url("../images/roy.png");
+    background-repeat: no-repeat;
+    background-size: 1em 1em;
+    padding-left: 1.5em;
+    background-position: 0 0.2em;
+ 
+}
+
+.container-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0 rgba(17, 12, 46, 0.8);
+    font-size: 1.3rem;
+}
+
+main{
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+/*----main content container adjustments------*/
+.container-img, .container-content{
+    flex-basis: 300px;
+    flex-grow: 1;
+    max-width: 500px;
+
+}
+/*----footer flex------*/
+footer{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+textarea{
+    height: 8em;
+}
+
+input[type="submit"] {
+    background-color: var(--lightblue);
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 5px; 
+  }
+
+  .carousel-container{
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    left: 25%;
+  }
+
+  .carousel{
+    list-style: none;
+    width: 100%;
+    height: 750px;
+    position: relative;
+  }
+
+  .carousel-item{
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 250ms opacity ease-in;
+    transition-delay: 250ms;
+  }
+
+  .carousel-item.active{
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0;
+  }
+
+  .carousel-item > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;  
+  }
+
+.carousel-button {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--lightblue);
+    position: absolute;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.carousel-button.left{
+    left: -2.2rem;
+    
+}
+
+.carousel-button.right{
+    right: -2.2rem;
+}
+
+.carousel-button:hover {
+    cursor: pointer;
+    background-color: var(--lightblue);
+    color: black;
+
+}
+
+.darkModeBtn{
+    background: transparent;
+    border: none;
+    color: var(--darkGray);
+    font-size: 2.2rem;
+    font-weight: 900;
+    position: relative;
+    cursor: pointer;
+    top: -60%;
+    left: 68%;
+    animation: bounce 0.5s cubic-bezier(0.8,0,1,1) infinite alternate;
+}
+
+
+.darkModeBtnClicked{
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 2.2rem; 
+  font-weight: 900; 
+  cursor: pointer;
+}
+
+
+@keyframes bounce {
+    100%{
+        margin-top: 30px;
+    }
+}
+
+
+.darkMode{
+    background-color: var(--darkGray);
+    color: white;
+    transition: ease-in, 0.7s;
+}
+
+.lightDarkMode{
+    background-color: var(--lightGray);
+    color: white;
+    transition: ease-in, 0.7s;
+}
+  
+.containerDarkMode{
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0 rgba(53, 53, 54, 0.8);
+    transition: ease-in, 0.7s;
+}
+
+.darkModeBtn .tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    font-size: 1.2rem;
+    background-color: var(--lightOrange);  
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.darkModeBtn:hover .tooltiptext {
+    visibility: visible;
+  }
+
+.newStuffBtn{
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 900;
+    position: relative;
+    cursor: pointer;
+    top: -90%;
+    left: 70%;
+}
+
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s, transform 0.25s;
+}
+
+.modal-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--darkGray);
+    padding: 1rem 1.5rem;
+    height: auto;
+    width: auto;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    float:right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: var(--lightGray);
+
+}
+
+.close-button:hover {
+    background-color: var(--darkGray);
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show-horoscope{
+    /* CSS */
+      align-items: center;
+      background-color: var(--lightblue);
+      box-shadow: 0px 5px 10px 0 rgba(17, 12, 46, 0.8);
+      border: 0;
+      border-radius: 100px;
+      box-sizing: border-box;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 20px;
+      max-width: 480px;
+      min-height: 40px;
+      min-width: 0px;
+      overflow: hidden;
+      padding: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      touch-action: manipulation;
+      transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+    }
+    
+    .show-horoscope:hover,
+    .show-horoscope:focus { 
+      background-color: #16437E;
+      color: #ffffff;
+    }
+    
+    .show-horoscope:active {
+      background: #09223b;
+      color: rgb(255, 255, 255, .7);
+    }
+    
+    .show-horoscope:disabled { 
+      cursor: not-allowed;
+      background: rgba(0, 0, 0, .08);
+      color: rgba(0, 0, 0, .3);
+    }
+
+    .show-horoscope.darkMode{
+        background-color: var(--lightGray);
+        box-shadow: 0px 5px 10px 0 rgba(53, 53, 54, 0.8);
+        transition: ease-in, 0.7s;
+    }
+
+    .show-horoscope.darkMode:hover,
+    .show-horoscope.darkMode:focus { 
+      background-color: var(--darkGray);
+      color: #ffffff;
+    }
+
+    .show-horoscope.darkMode:disabled { 
+        cursor: not-allowed;
+        background: rgba(0, 0, 0, .08);
+        color: var(--lightGray);
+      }
